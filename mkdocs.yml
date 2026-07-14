@@ -1,0 +1,48 @@
+site_name: AI Trend Reports
+site_url: https://amszuidas.github.io/ai-trend-reports/
+site_description: 每日 AI / Agent 开源项目与行业进展报告
+
+repo_name: amszuidas/ai-trend-reports
+repo_url: https://github.com/amszuidas/ai-trend-reports
+edit_uri: edit/main/docs/
+
+theme:
+  name: material
+  language: zh
+  features:
+    - navigation.tabs
+    - navigation.sections
+    - navigation.indexes
+    - navigation.top
+    - search.suggest
+    - search.highlight
+    - content.action.view
+  palette:
+    - media: "(prefers-color-scheme: light)"
+      scheme: default
+      primary: indigo
+      accent: blue
+      toggle:
+        icon: material/brightness-7
+        name: 切换至深色模式
+    - media: "(prefers-color-scheme: dark)"
+      scheme: slate
+      primary: indigo
+      accent: blue
+      toggle:
+        icon: material/brightness-4
+        name: 切换至浅色模式
+
+plugins:
+  - search:
+      lang: zh
+  - awesome-pages
+
+markdown_extensions:
+  - tables
+  - attr_list
+  - md_in_html
+  - toc:
+      permalink: true
+  - pymdownx.details
+  - pymdownx.superfences
