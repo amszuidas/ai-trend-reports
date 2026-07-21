@@ -619,7 +619,8 @@ body {
 }
 
 .atr-home {
-  padding: 0 0 3rem;
+  box-sizing: border-box;
+  padding: 0 1.2rem 3rem;
 }
 
 .atr-section {
@@ -886,6 +887,11 @@ body {
     padding-left: 1.6rem;
     padding-right: 1.6rem;
   }
+
+  .atr-home {
+    padding-left: 1.6rem;
+    padding-right: 1.6rem;
+  }
 }
 
 @media screen and (max-width: 60em) {
@@ -965,7 +971,7 @@ body {
   }
 
   .atr-home {
-    padding-bottom: 1.5rem;
+    padding: 0 1rem 1.5rem;
   }
 
   .atr-stream-grid {
