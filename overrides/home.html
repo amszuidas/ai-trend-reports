@@ -1,13 +1,11 @@
 {% extends "main.html" %}
 
-{% set streams = namespace(agent=none, industry=none, startup=none) %}
+{% set streams = namespace(agent=none, industry=none) %}
 {% for nav_item in nav %}
   {% if nav_item.title == "AI / Agent 项目日报" and nav_item.children %}
     {% set streams.agent = nav_item.children[0] %}
   {% elif nav_item.title == "AI 行业文章日报" and nav_item.children %}
     {% set streams.industry = nav_item.children[0] %}
-  {% elif nav_item.title == "中国早期 AI 初创雷达" and nav_item.children %}
-    {% set streams.startup = nav_item.children[0] %}
   {% endif %}
 {% endfor %}
 
@@ -18,7 +16,7 @@
       <div class="atr-hero__copy">
         <p class="atr-eyebrow">AI TREND REPORTS · CONTINUOUS INTELLIGENCE</p>
         <h1 id="atr-hero-title">把 AI 的噪声，<br>整理成可行动的信号。</h1>
-        <p class="atr-hero__lead">持续追踪开源 Agent、产业变化与中国早期 AI 初创。每条结论都尽量回到一手材料，并把事实、厂商口径与判断分开呈现。</p>
+        <p class="atr-hero__lead">持续追踪开源 Agent 与产业变化。每条结论都尽量回到一手材料，并把事实、厂商口径与判断分开呈现。</p>
         <div class="atr-hero__actions">
           {% if streams.agent %}
             <a class="atr-button atr-button--primary" href="{{ streams.agent.url | url }}">
@@ -29,7 +27,7 @@
           <a class="atr-button atr-button--quiet" href="#intelligence-streams">浏览情报栏目</a>
         </div>
         <dl class="atr-hero__facts">
-          <div><dt>03</dt><dd>条持续情报流</dd></div>
+          <div><dt>02</dt><dd>条持续情报流</dd></div>
           <div><dt>1st</dt><dd>优先一手信源</dd></div>
           <div><dt>CN</dt><dd>中文深度整理</dd></div>
         </dl>
@@ -55,13 +53,6 @@
               <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 18l6-6-6-6"/></svg>
             </a>
           {% endif %}
-          {% if streams.startup %}
-            <a href="{{ streams.startup.url | url }}" aria-label="阅读 {{ streams.startup.title }}">
-              <span class="atr-signal-board__index">03</span>
-              <span><strong>AI 初创雷达</strong><small>{{ streams.startup.title[:10] }} · 公司 / 产品</small></span>
-              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 18l6-6-6-6"/></svg>
-            </a>
-          {% endif %}
         </div>
         <p class="atr-signal-board__note">来源、时间与证据强度会在报告中显式标注。</p>
       </aside>
@@ -78,7 +69,7 @@
         <div class="atr-section__head">
           <div>
             <p class="atr-kicker">Intelligence streams</p>
-            <h2 id="streams-title">三条情报流，覆盖技术、行业与初创生态。</h2>
+            <h2 id="streams-title">两条情报流，覆盖技术项目与行业变化。</h2>
           </div>
           <p>不是信息搬运，而是围绕“现在能做什么、证据有多强、下一步该如何行动”进行持续整理。</p>
         </div>
@@ -124,25 +115,6 @@
             </a>
           {% endif %}
 
-          {% if streams.startup %}
-            <a class="atr-stream-card atr-stream-card--compact" href="{{ streams.startup.url | url }}">
-              <div class="atr-stream-card__top">
-                <span class="atr-stream-card__icon">
-                  <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M15.5 8.5l-2 5-5 2 2-5 5-2z"/></svg>
-                </span>
-                <span class="atr-tag">每周更新</span>
-              </div>
-              <div class="atr-stream-card__body">
-                <p>03 / STARTUP RADAR</p>
-                <h3>中国早期 AI 初创雷达</h3>
-                <p>核验融资、团队规模、产品进展、技术路线、商业信号与关键风险。</p>
-              </div>
-              <div class="atr-stream-card__foot">
-                <span><small>最新一期</small>{{ streams.startup.title[:10] }}</span>
-                <span class="atr-card-link" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
-              </div>
-            </a>
-          {% endif %}
         </div>
       </section>
 
